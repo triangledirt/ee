@@ -1,0 +1,1 @@
+rm -f *.o libee.a test *.core vgcore.* *~ *.~
