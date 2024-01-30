@@ -1,10 +1,10 @@
 #include <stdlib.h>
-#include "../obj/game2.h"
+#include "../obj/game3.h"
 #include "../obj/obj.h"
 #include "ee_morph.h"
 
 obj_t obj;
-obj_game2_t game = 110;
+obj_game3_t game = 110;
 long modbit;
 
 void ee_morph_start(void *ctx)
@@ -28,7 +28,7 @@ void ee_morph_unmod(void *ctx)
 double ee_morph_exp(void *ctx)
 {
   double eval;
-  obj_morph2ticks(&obj, game, OBJ);
+  obj_morph3ticks(&obj, game, OBJ);
   eval = 1.0;  /*  TODO  */
   return eval;
 }
