@@ -7,7 +7,7 @@ typedef void (*ee_mod_f)(void *ctx);
 typedef void (*ee_unmod_f)(void *ctx);
 typedef double (*ee_exp_f)(void *ctx);
 
-double eval = 1.0;
+double eval = 0.0;
 
 void *context;
 ee_start_f startfunc;
