@@ -29,7 +29,7 @@ double ee_morph_exp(void *ctx)
 {
   double eval;
   obj_t xobj = obj;
-  obj_morph3ticks(&xobj, game, OBJ);
+  obj_morph3(&xobj, game, OBJ);
   eval = 1.0;  /*  TODO  */
   return eval;
 }
