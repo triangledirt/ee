@@ -16,7 +16,7 @@ void ee_morph_stop(void *ctx) {}
 
 void ee_morph_mod(void *ctx)
 {
-  modbit = random() % OBJ;
+  modbit = obj_randomindex();
   obj_flipattr(&obj, modbit);
 }
 
