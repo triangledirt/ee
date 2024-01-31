@@ -28,7 +28,8 @@ void ee_morph_unmod(void *ctx)
 double ee_morph_exp(void *ctx)
 {
   double eval;
-  obj_morph3ticks(&obj, game, OBJ);
+  obj_t xobj = obj;
+  obj_morph3ticks(&xobj, game, OBJ);
   eval = 1.0;  /*  TODO  */
   return eval;
 }
