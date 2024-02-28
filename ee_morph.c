@@ -35,3 +35,8 @@ double ee_morph_exp(void *ctx)
   eval = stat.ones / (double) OBJ;
   return eval;
 }
+
+void ee_morph_print()
+{
+  obj_print(obj);
+}

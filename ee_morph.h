@@ -7,4 +7,6 @@ void ee_morph_mod(void *ctx);
 void ee_morph_unmod(void *ctx);
 double ee_morph_exp(void *ctx);
 
+void ee_morph_print();
+
 #endif
