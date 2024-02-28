@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
   ee_stop();
 
   ee_morph_print();
-  printf("\t");
   printf("%f\n", ee_eval());
 
   return 0;

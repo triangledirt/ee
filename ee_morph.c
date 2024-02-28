@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "../obj/game3.h"
 #include "../obj/obj.h"
@@ -38,5 +39,12 @@ double ee_morph_exp(void *ctx)
 
 void ee_morph_print()
 {
-  obj_print(obj);
+  obj_t xobj = obj;
+  struct obj_stat_t stat;
+  long tick;
+  for (tick = 0; tick < OBJ; tick++) {
+    obj_morph3(&xobj, game, 1);
+    obj_print(xobj);
+    printf("\n");
+  }
 }
