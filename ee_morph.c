@@ -4,26 +4,33 @@
 #include "../obj/obj.h"
 #include "ee_morph.h"
 
+#define MODBITS 8
+
 obj_t obj;
 obj_game3_t game = 110;
-long modbit;
+long modbits[MODBITS];
 
 void ee_morph_start(void *ctx)
 {
-  obj_singlize(&obj);
+  obj_randomize(&obj);
 }
 
 void ee_morph_stop(void *ctx) {}
 
 void ee_morph_mod(void *ctx)
 {
-  modbit = obj_randomindex();
-  obj_flipattr(&obj, modbit);
+  long i;
+  for (i = 0; i < MODBITS; i++) {
+    modbits[i] = obj_randomindex();
+    obj_flipattr(&obj, modbits[i]);
+  }
 }
 
 void ee_morph_unmod(void *ctx)
 {
-  obj_flipattr(&obj, modbit);
+  long i;
+  for (i = 0; i < MODBITS; i++)
+    obj_flipattr(&obj, modbits[i]);
 }
 
 double ee_morph_exp(void *ctx)
@@ -33,7 +40,7 @@ double ee_morph_exp(void *ctx)
   struct obj_stat_t stat;
   obj_morph3(&xobj, game, OBJ);
   stat = obj_stat(xobj);
-  eval = stat.ones / (double) OBJ;
+  eval = labs(stat.zeroes - stat.ones) / (double) OBJ;
   return eval;
 }
 
