@@ -10,7 +10,7 @@ long modbit;
 
 void ee_morph_start(void *ctx)
 {
-  obj_randomize(&obj);
+  obj_singlize(&obj);
 }
 
 void ee_morph_stop(void *ctx) {}
@@ -42,6 +42,8 @@ void ee_morph_print()
   obj_t xobj = obj;
   struct obj_stat_t stat;
   long tick;
+  obj_print(xobj);
+  printf("\n");
   for (tick = 0; tick < OBJ; tick++) {
     obj_morph3(&xobj, game, 1);
     obj_print(xobj);
