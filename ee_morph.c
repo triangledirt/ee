@@ -40,7 +40,7 @@ double ee_morph_exp(void *ctx)
   struct obj_stat_t stat;
   obj_morph3(&xobj, game, OBJ);
   stat = obj_stat(xobj);
-  eval = labs(stat.zeroes - stat.ones) / (double) OBJ;
+  eval = stat.zeroes / (double) OBJ;
   return eval;
 }
 
